@@ -35,4 +35,8 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+<<<<<<< HEAD
+=======
+    icon=['C:\\Users\\دبل كليك\\Desktop\\f1\\gui_gethub-main\\logo.png'],
+>>>>>>> f3772b1 (Update :result ,icon)
 )

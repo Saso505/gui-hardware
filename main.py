@@ -119,7 +119,15 @@ class VideoApp:
                 if response.status_code == 200:
                     try:
                         result = response.json()
+<<<<<<< HEAD
                         self.prediction_text.set(f"Result: {result}")
+=======
+                        outcome = result.get("result", "Unknown").capitalize()
+                        if outcome == "Truth" or outcome == "Lie":
+                            self.prediction_text.set( f"Result : {outcome}")
+                        else:
+                            self.prediction_text.set("Unknown")
+>>>>>>> f3772b1 (Update :result ,icon)
                     except Exception:
                         self.prediction_text.set(f"Result: {response.text}")
                 else:
@@ -179,9 +187,15 @@ class VideoApp:
         # Login button
         self.login_button = tk.Label(frame, text="Login", font=("Arial", 14, "bold"), bg="#7D31D6", fg="white", padx=30, pady=12, cursor="hand2")
         self.login_button.grid(row=5, column=0, pady=10)
+<<<<<<< HEAD
         self.login_button.bind("<Enter>", lambda e: self.login_button.config(bg="#1E293B"))
         self.login_button.bind("<Leave>", lambda e: self.login_button.config(bg="#7D31D6"))
         self.login_button.bind("<Button-1>", lambda e: self.login_button.config(bg="#0C1A2B"))
+=======
+        self.login_button.bind("<Enter>", lambda e: self.login_button.config(bg="#2359AF"))
+        self.login_button.bind("<Leave>", lambda e: self.login_button.config(bg="#7D31D6"))
+        self.login_button.bind("<Button-1>", lambda e: self.login_button.config(bg="#114583"))
+>>>>>>> f3772b1 (Update :result ,icon)
         self.login_button.bind("<ButtonRelease-1>", lambda e: self.login_function())
 
         # Load and display logo
@@ -213,7 +227,11 @@ class VideoApp:
         service_window.configure(bg="white")
 
         tk.Label(service_window, text=f"Welcome, {username}", font=("Georgia", 16, "bold"), fg="#1E1B4B", bg="white").pack(pady=5)
+<<<<<<< HEAD
         tk.Label(service_window, text="Service", font=("Georgia", 20, "bold"), fg="#1E1B4B", bg="white").pack()
+=======
+        
+>>>>>>> f3772b1 (Update :result ,icon)
 
         self.video_preview = tk.Label(service_window, bg="white", text="No video selected.", font=("Arial", 12), fg="gray")
         self.video_preview.pack(pady=10)
@@ -260,10 +278,19 @@ class VideoApp:
         self.form_frame.pack(pady=20)  # Pack the form frame
 
         self.prediction_text = tk.StringVar()
+<<<<<<< HEAD
         self.prediction_label = tk.Label(service_window, textvariable=self.prediction_text, font=("Arial", 12), fg="#1E1B4B", bg="white")
         self.btn_clear = tk.Button(service_window, text="Clear", bg="#991B1B", fg="white", font=("Arial", 12), command=self.clear_form, padx=20, pady=5)
 
         self.form_visible = True
+=======
+  
+        
+        self.prediction_label = tk.Label(service_window, textvariable=self.prediction_text, font=("Arial", 17,"bold"), fg="#1E1B4B", bg="white" )
+        self.btn_clear = tk.Button(service_window, text="Clear", bg="#991B1B", fg="white", font=("Arial", 12), command=self.clear_form, padx=20, pady=5)
+
+        self.form_visible = True    
+>>>>>>> f3772b1 (Update :result ,icon)
         # No need to call show_form() here since form_frame is packed directly
 
         logo_path = self.resource_path("logo.png")
